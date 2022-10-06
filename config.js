@@ -1,6 +1,6 @@
 module.exports = {
   bot: {
-    token: "MTAwOTU4OTYyMDMwMTg4OTY1Nw.GM4Kk6.KGLoRodGguSqC2sq7whPlQ4VU9UFQK3nXI7e-A", //Bot Token from https://discord.com/developers/applications
+    token: "MTAwOTU4OTYyMDMwMTg4OTY1Nw.GeIhng.5caT54Ir5FZ-4Op-a3GYvcMXd5gJRh4hyIqPFE", //Bot Token from https://discord.com/developers/applications
     prefix: "c!", //Bot Prefix
     owners: ["960025881642958898"], //Bot Onwer ID
     maintenance: false,
