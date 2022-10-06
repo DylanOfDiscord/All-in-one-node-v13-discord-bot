@@ -1,8 +1,77 @@
 let cooldown = {};
+const Discord = require("discord.js")
+const usersMap = new Map();
+const LIMIT = 7;
+const DIFF = 5000;
 module.exports = client => {
+
   client.on("messageCreate", async message => {
     //require("../../structures/MessageScript/Message.js");
     if (message.author.bot || !message.guild || message.webhookID) return;
+    const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.com\/invite|discord\.com\/invite)\/.+[a-z]/gi;
+
+    if(!message.guild.me.permissions.has('ADMINISTRATOR')) {
+      if(!message.channel.id === "1008835025543888976") return;
+      if(!message.channel.id === "1008835096012398673") return;
+      if(!message.channel.id === "1008835061078048888") return;
+      
+      if (regex.exec(message.content)) {
+        message.delete()
+        let embed = new Discord.MessageEmbed()
+        .setTitle("Message Deleted")
+        .setColor("RED")
+        .setDescription('Your message included a invite so it was deleted.')
+        .setFooter("Astra Auto-Moderation")
+        message.channel.send({embeds: [embed]})
+      }
+    }
+    let Spamembed = new Discord.MessageEmbed()
+        .setTitle("Message Deleted")
+        .setColor("RED")
+        .setDescription('Your message has been deleted for spamming.')
+        .setFooter("Astra Auto-Moderation")
+    
+    if(usersMap.has(message.author.id)) {
+        const userData = usersMap.get(message.author.id);
+        const { lastMessage, timer } = userData;
+        const difference = message.createdTimestamp - lastMessage.createdTimestamp;
+        let msgCount = userData.msgCount;
+        console.log(difference);
+
+        if(difference > DIFF) {
+            clearTimeout(timer);
+            userData.msgCount = 1;
+            userData.lastMessage = message;
+            userData.timer = setTimeout(() => {
+                usersMap.delete(message.author.id);
+            }, 30000);
+            usersMap.set(message.author.id, userData)
+        }
+        else {
+            ++msgCount;
+            if(parseInt(msgCount) === LIMIT) {
+
+               message.reply({embeds: [Spamembed]});
+              message.channel.bulkDelete(LIMIT);
+               
+            } else {
+                userData.msgCount = msgCount;
+                usersMap.set(message.author.id, userData);
+            }
+        }
+    }
+    else {
+        let fn = setTimeout(() => {
+            usersMap.delete(message.author.id);
+            console.log('Removed from map.')
+        }, 30000);
+        usersMap.set(message.author.id, {
+            msgCount: 1,
+            lastMessage : message,
+            timer : fn
+        });
+    }
+    
     let Prefix = await client.data.get(`Prefix_${message.guild.id}`);
     if (!Prefix) Prefix = client.config.bot.prefix;
     const escapeRegex = str =>

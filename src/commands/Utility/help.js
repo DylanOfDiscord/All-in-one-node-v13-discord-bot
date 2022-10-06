@@ -16,17 +16,18 @@ module.exports = {
     const category = new Discord.Collection();
     const menus = [];
     const c_cmd = {
-      fun: await client.emoji("DGH_fun"),
-      utility: await client.emoji("DGH_util"),
-      info: await client.emoji("DGH_info"),
-      levels: await client.emoji("DGH_level_up"),
-      admin: await client.emoji("DGH_admin"),
-      settings: await client.emoji("DGH_setting"),
-      moderation: await client.emoji("DGH_mod"),
-      misc: await client.emoji("DGH_misc"),
-      games: await client.emoji("DGH_games"),
-      search: await client.emoji("DGH_search"),
-      custom: await client.emoji("DGH_add"),
+      fun: await client.emoji("🌺"),
+      utility: await client.emoji("🌚"),
+      info: await client.emoji("✅"),
+      levels: await client.emoji("⬆️"),
+      admin: await client.emoji("🍭"),
+      settings: await client.emoji("🍬"),
+      moderation: await client.emoji("😞"),
+      misc: await client.emoji("😕"),
+      games: await client.emoji("🌚"),
+      search: await client.emoji("😞") ,  
+      custom: await
+client.emoji("🎃"),
       anti_swear: "🤬"
     };
     menus.push({
@@ -194,12 +195,12 @@ module.exports = {
       new client.Discord.MessageButton()
         .setURL("https://dgh-bot.ddns.net/dc")
         .setStyle("LINK")
-        .setEmoji(await client.emoji("DGH_link"))
+        .setEmoji(await client.emoji("🧑‍🦯"))
         .setLabel("Support"),
       new client.Discord.MessageButton()
         .setURL("https://dgh-bot.ddns.net/invite")
         .setStyle("LINK")
-        .setEmoji(await client.emoji("DGH_link"))
+        .setEmoji(await client.emoji("🌻"))
         .setLabel("Invite Me")
     );
     let button_for_owner = new MessageActionRow().addComponents(

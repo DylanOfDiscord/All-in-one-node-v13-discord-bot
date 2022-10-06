@@ -1,31 +1,31 @@
 module.exports = {
   bot: {
-    token: "", //Bot Token from https://discord.com/developers/applications
-    prefix: "", //Bot Prefix
-    owners: [""], //Bot Onwer ID
+    token: "this.config", //Bot Token from https://discord.com/developers/applications
+    prefix: "c!", //Bot Prefix
+    owners: ["960025881642958898"], //Bot Onwer ID
     maintenance: false,
     mongourl:
-      "", //https://mongodb.com/cloud/atlas/register
+      "mongodb+srv://DBH:Daniel01@codingzone.ug8pa.mongodb.net/test", //https://mongodb.com/cloud/atlas/register
     invite:
-      "", //Link Invite Bot
+      "https://discord.com/api/oauth2/authorize?client_id=901009592148975636&permissions=8&scope=bot", //Link Invite Bot
     bot_add_description:
       "You've just added me to **{guild}**.\nThank you for adding me to your server",
     bot_remove_description:
       "You got me out on the **{guild}** server, sorry if there's a mistake on me"
   },
   status: {
-    stats: "", //Status Bot <idle, online, dnd , invisible>
-    type: "", //Playing Bot <PLAYING, WATCHING , and others>
-    name: "" //Status Playing
+    stats: "online", //Status Bot <idle, online, dnd , invisible>
+    type: "watching", //Playing Bot <PLAYING, WATCHING , and others>
+    name: "Over Astra" //Status Playing
   },//Unfinished Dashboard
   dash: {
-    secret: "", //SECRET Bot
-    id: "", //ID Bot
-    url: "" //Login URL
+    secret: "6gc1KZrdYTrnPjmAODeP9NRTlAgQfZ7C", //SECRET Bot
+    id: "901009592148975636", //ID Bot
+    url: "https://vibes.tk" //Login URL
   },
   server: {
-    id: "", //Server ID
-    invite: "https://discord.gg/8matjVVsKS" //Server Support
+    id: "898476770301452308", //Server ID
+    invite: "https://discord.gg/QSFYbGWq" //Server Support
   },
   image: {
     welcome:
@@ -42,18 +42,18 @@ module.exports = {
       "https://i.pinimg.com/736x/d1/00/7b/d1007b46e6175f49f53712f16e4f6a3c.jpg" //Image Leaderboard Card
   },
   mod: {
-    muted_defauld: "Muted", // bot will make Roles muted for members who got muted
+    muted_defauld: "🔇・Muted", // bot will make Roles muted for members who got muted
 
     //Coming soon auto mod!
-    limit_warn: 0, //bot will kick member if it has 3 warns
-    limit_muted: 0 //bot will kick member if it has 5 Muted
+    limit_warn: 3, //bot will kick member if it has 3 warns
+    limit_muted: 5 //bot will kick member if it has 5 Muted
   },
   logs: {
-    boton: "", //Channel ID Bot Online
-    botadd: "", //Channel ID Bot Add In Guild
-    botdel: "", //Channel ID Bot Remove in Guild
+    boton: "978800769031626792", //Channel ID Bot Online
+    botadd: "978800769031626792", //Channel ID Bot Add In Guild
+    botdel: "978800769031626792", //Channel ID Bot Remove in Guild
     botlogin: "there is not any yet", //Channel ID User Login
-    botreport: ""
+    botreport: "1020171708495306763"
   },
   giveaway: {
     default: {

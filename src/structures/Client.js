@@ -71,7 +71,7 @@ module.exports = class DGH_BOT_CLIENT extends Client {
     const { init } = require("./mongoose");
     require("./verifyConfig")(this.config);
     init();
-    super.login(bot.token);
+    super.login(process.env.token);
     this.on("ready", async () => {
       console.log(`Bot Is Ready To Go!\nTag: ${this.user.tag}`);
       this.channels.cache.get(logs.boton).send({
@@ -171,6 +171,8 @@ module.exports = class DGH_BOT_CLIENT extends Client {
    * @returns {Channel|null}
    * @param {string} search
    */
+
+  
   resolveChannel(search) {
     if (!search) return null;
     let channel = null;

@@ -7,6 +7,7 @@ module.exports = {
   P_user: ["MANAGE_MESSAGES"],
   description: "Delete messages from the channel",
   run: async (client, message, args) => {
+    try {
     await message.delete();
     let amount = Number(args[0], 10) || parseInt(args[0]);
     if (isNaN(amount) || !Number.isInteger(amount)) {
@@ -53,5 +54,7 @@ module.exports = {
         });
       }
     }
+    } catch(e) {
   }
+  } 
 };
