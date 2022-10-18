@@ -70,7 +70,7 @@ module.exports = class DGH_BOT_CLIENT extends Client {
     const { init } = require("./mongoose");
     require("./verifyConfig")(this.config);
     init();
-    super.login(process.env.token);
+    super.login(this.config.bot.token);
     this.on("ready", async () => {
       console.log(`Bot Is Ready To Go!\nTag: ${this.user.tag}`);
       this.channels.cache.get(logs.boton).send({
