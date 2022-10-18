@@ -8,7 +8,6 @@ const {
   MessageButton,
   MessageActionRow
 } = require("discord.js");
-const ytdl = require("ytdl-core");
 const fetch = require("node-fetch");
 const dblist = require("dblist.api");
 
