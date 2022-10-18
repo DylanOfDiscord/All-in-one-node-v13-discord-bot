@@ -49,8 +49,6 @@
     "sourcebin_js": "^0.0.2",
     "util": "^0.12.4",
     "youtube-sr": "^4.1.6",
-    "yt-search": "^2.10.0",
-    "ytdl-core": "^4.9.1",
     "ytsr": "^3.5.3"
   },
   "engines": {
